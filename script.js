@@ -222,7 +222,13 @@ onValue(oldgramInDB, function(snapshot){
             } else if (item[1].html === "commentSection3" || item[1].html == commentSectionArr[2]){
                 const commentSectionEl = document.getElementById(commentSectionArr[2])
                 appendComments(item, commentSectionEl)
-            } 
+            } else {
+                const commentdom = item[1].innerHTML 
+                commentSectionEl = document.getElementById(commentdom)
+                if (commentSectionEl){
+                    appendComments(item, commentSectionEl)
+                }
+            }
         }
     } else {
         push(oldgramInDB, "hello")
