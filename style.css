@@ -35,6 +35,8 @@ body{
 }
 .user {
     width: 45px;
+    height: 45px;
+    object-fit: cover;
     border-radius: 50%;
 }
 .user:hover{
@@ -221,6 +223,17 @@ main, header{
 .hidden{
     display: none;
 }
+.upload-picture{
+    background: #2ea4d69c;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-top: 2px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.upload-picture:hover{
+    cursor: pointer;
+}
 
 @media (max-width:700px)  { 
     .container{
@@ -234,9 +247,6 @@ main, header{
     }
     .flex p{
         font-size: 22px;
-    }
-    .user{
-        width: 30px;
     }
     .avatar{
         width: 30px;

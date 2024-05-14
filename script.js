@@ -19,8 +19,27 @@ const profileUser = document.getElementById('profile-user');
 // close sesion btn and modal
 const closeBtn = document.getElementById('close-sesion');
 const closeModal = document.getElementById('modal-close-sesion');
+// profile picture
+const MyPicture = document.getElementById('myFileInput');
 
+MyPicture.addEventListener('change', (e) => {
+    const reader = new FileReader()
 
+    reader.addEventListener('load', () =>{
+        localStorage.setItem('profile-picture', reader.result);
+        window.location.reload();
+    })
+
+    reader.readAsDataURL(e.target.files[0])
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    const recentImg = localStorage.getItem('profile-picture');
+
+    if (recentImg) {
+        profileUser.setAttribute("src", recentImg)
+    }
+})
 
 function getPostsArray(posts){
     const postsArray = []
