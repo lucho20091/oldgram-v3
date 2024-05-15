@@ -21,7 +21,12 @@ const closeBtn = document.getElementById('close-sesion');
 const closeModal = document.getElementById('modal-close-sesion');
 // profile picture
 const MyPicture = document.getElementById('myFileInput');
+// form
+const postImgDiv = document.getElementById('post-img-div');
+const myPostImg = document.getElementById('my-post-img');
+const myPostText = document.getElementById('my-post-text');
 
+console.log(myPostImg);
 MyPicture.addEventListener('change', (e) => {
     const reader = new FileReader()
 
@@ -35,10 +40,30 @@ MyPicture.addEventListener('change', (e) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const recentImg = localStorage.getItem('profile-picture');
+    const postImg = localStorage.getItem('my-post-img')
 
     if (recentImg) {
         profileUser.setAttribute("src", recentImg)
     }
+
+    if (postImg){
+        const newEl = document.createElement('img')
+        newEl.setAttribute('src', postImg)
+        newEl.style.width = '100px'
+        postImgDiv.appendChild(newEl)
+    }
+})
+
+// form my post
+myPostImg.addEventListener('change', (e) => {
+    const reader = new FileReader()
+
+    reader.addEventListener('load', () =>{
+        localStorage.setItem('my-post-img', reader.result)
+        window.location.reload()
+    })
+
+    reader.readAsDataURL(e.target.files[0])
 })
 
 function getPostsArray(posts){
