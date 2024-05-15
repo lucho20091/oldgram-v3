@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newEl = document.createElement('img')
         newEl.setAttribute('src', postImg)
         newEl.style.width = '100px'
+        newEl.style.display = 'none'
         postImgDiv.appendChild(newEl)
     }
 })

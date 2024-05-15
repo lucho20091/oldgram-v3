@@ -52,25 +52,41 @@ body{
 
 .container-form{
     width: 375px;
-    height: 300px;
-    padding: 16px 20px;
+    height: 70px;
+    padding: 0 20px;
     margin: 0 auto;
     /* background: #D8E1E9; */
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     user-select: none;
 }
-
-.flex-my-post{
-    display: flex;
+.post-img-div{
+    width: 375px;
+    margin: 0 auto;
+}
+.form-my-post{
     width: 100%;
-    gap: 15px;
-    align-items:flex-start;
+}
+.flex-my-post{
+    width: 100%;
+    display: flex;
 }
 .flex-my-post label{
-    padding: 2px 4px;
+    width: 50px;
+    height: 50px;
     font-size: 40px;
+    text-align: center;
+    vertical-align: top;
+}
+.flex-my-post button{
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    border: none;
+    background: transparent;
+    text-align: center;
+    vertical-align: top;
 
 }
 section .flex-my-post input {
